@@ -1,0 +1,102 @@
+/**
+ * @name system24
+ * @description System-matching TUI theme for Hyprland & Foot
+ * @author refact0r & sloupok
+ * @version 2.1.0
+*/
+@import url("https://refact0r.github.io/system24/build/system24.css");
+
+body {
+    --font: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+    --code-font: "JetBrainsMono Nerd Font", monospace;
+    font-weight: 400;
+    letter-spacing: -0.02ch;
+
+    --gap: 8px;
+    --divider-thickness: 2px;
+    --border-thickness: 1px;
+    --border-hover-transition: 0.15s ease;
+
+    --unrounding: off;
+    --round-pfp: on;
+    --remove-pfp-decor: on;
+
+    /* Выключаем шумные метки (чинит обрезание текста в чате) */
+    --panel-labels: off;
+    /* Выключаем сжатие нижней панели (чинит блок звонка) */
+    --small-user-panel: off;
+}
+
+:root {
+    --colors: on;
+
+    /* Шрифты и текст (Nord Snow Storm из foot foreground) */
+    --text-0: #0d1013;
+    --text-1: #eceff4;
+    --text-2: #e5e9f0;
+    --text-3: #d8dee9;
+    --text-4: #8892b0;
+    --text-5: #4c566a;
+
+    /* Системные фоны (foot background=111518, regular0=1c2327) */
+    --bg-1: #232c32;
+    --bg-2: #1c2327;
+    --bg-3: #111518;
+    --bg-4: #0d1013;
+
+    --hover: rgba(224, 90, 71, 0.12);
+    --active: rgba(245, 158, 11, 0.2);
+    --active-2: rgba(245, 158, 11, 0.3);
+    --message-hover: rgba(28, 35, 39, 0.35);
+
+    /* Акценты Hyprland (active_border e05a47 / e3a857) */
+    --accent-1: #e3a857;
+    --accent-2: #e05a47;
+    --accent-3: #e3a857;
+    --accent-4: #d99a45;
+    --accent-5: #b47e30;
+    --accent-new: #e05a47;
+
+    /* Статусы */
+    --online: #8fb573;
+    --dnd: #e05a47;
+    --idle: #e3a857;
+    --streaming: #b07bac;
+    --offline: #4c566a;
+
+    /* Рамки панелей тайлов */
+    --border-light: #1c2327;
+    --border: #1c2327;
+    --border-hover: #e3a857;
+}
+
+/* Скрываем ненужные в тайлинге оконные кнопки */
+[class^="winButtonClose"],
+[class^="winButtonMinMax"],
+[class^="typeWindows"] > [class^="winButton"] {
+    display: none !important;
+}
+
+/* Полное скрытие кнопок заголовка для тайлинга */
+[class*="winButton_"],
+[class*="winButtonMinMax_"],
+[class*="winButtonClose_"],
+div[class*="typeWindows_"] > div[role="button"] {
+    display: none !important;
+}
+
+/* Возврат стандартного скругления иконок серверов и папок */
+nav[class*="guilds_"] foreignObject,
+nav[class*="guilds_"] [class*="folder_"],
+nav[class*="guilds_"] [class*="folderIcon_"],
+nav[class*="guilds_"] [class*="wrapper_"],
+nav[class*="guilds_"] [class*="svg_"],
+nav[class*="guilds_"] svg mask {
+    border-radius: var(--radius-round, 50%) !important;
+    mask: revert !important;
+    -webkit-mask: revert !important;
+}
+nav[class*="guilds_"] [class*="icon_"],
+nav[class*="guilds_"] [class*="childWrapper_"] {
+    border-radius: inherit !important;
+}
